@@ -1,0 +1,11 @@
+Revision history for XML-Filter-Conditional
+
+0.02    BUGFIXES:
+         * Declare dependency on XML::SAX::ParserFactory because it doesn't
+           automatically come with XML::SAX::Base
+         * Don't reuse the parser in t/20exceptions.t because XML::SAX::Expat
+           has a bug if reused in this way; reconstruct fresh one each time.
+         * 'use constant' in a perl 5.6-compatible way.
+
+0.01    First version, released on an unsuspecting world.
+

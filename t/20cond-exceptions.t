@@ -50,6 +50,12 @@ EOXML
    qr/^Found a <case> element outside of a containing switch\s/,
    'Bare <case> element fails' );
 
+# XML::SAX::Expat has a bug, where if the filter chain throws an exception,
+# the internal state is not cleanly fixed up, and subsequent uses of the same
+# object will fail. To get around this, we'll re-construct a new parser object
+# every time
+$parser = XML::SAX::ParserFactory->parser( Handler => $filter );
+
 throws_ok( sub {
       $parser->parse_string( <<EOXML );
 <test>
@@ -59,6 +65,8 @@ EOXML
    },
    qr/^Found a <otherwise> element outside of a containing switch\s/,
    'Bare <otherwise> element fails' );
+
+$parser = XML::SAX::ParserFactory->parser( Handler => $filter );
 
 throws_ok( sub {
       $parser->parse_string( <<EOXML );
@@ -74,6 +82,8 @@ EOXML
    qr/^Found a <case> element nested within another\s/,
    'Nested <case> element fails' );
 
+$parser = XML::SAX::ParserFactory->parser( Handler => $filter );
+
 throws_ok( sub {
       $parser->parse_string( <<EOXML );
 <test>
@@ -87,6 +97,8 @@ EOXML
    },
    qr/^Found a <otherwise> element nested within another\s/,
    'Nested <case> element fails' );
+
+$parser = XML::SAX::ParserFactory->parser( Handler => $filter );
 
 throws_ok( sub { XML::Filter::Conditional->new( Handler => $out ); },
            qr/^XML::Filter::Conditional must provide ->\w+\(\) at /,

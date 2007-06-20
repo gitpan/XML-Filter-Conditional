@@ -1,6 +1,6 @@
 ---
 name: XML-Filter-Conditional
-version: 0.01
+version: 0.02
 author:
   - 'Paul Evans E<lt>leonerd@leonerd.org.ukE<gt>'
 abstract: |-
@@ -12,8 +12,9 @@ requires:
 build_requires:
   Test::Exception: 0
   Test::More: 0
+  XML::SAX::ParserFactory: 1.00
 provides:
   XML::Filter::Conditional:
     file: lib/XML/Filter/Conditional.pm
-    version: 0.01
+    version: 0.02
 generated_by: Module::Build version 0.26

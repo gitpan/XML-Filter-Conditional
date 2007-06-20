@@ -10,7 +10,7 @@ use base qw( XML::SAX::Base );
 
 use Carp;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 
@@ -150,11 +150,9 @@ sub new
 #   <case> in cold </case>
 # </switch>
 
-use constant {
-   STATE_SWITCH_OUTSIDE => 1,
-   STATE_SWITCH_INHOT   => 2,
-   STATE_SWITCH_INCOLD  => 3,
-};
+use constant STATE_SWITCH_OUTSIDE => 1;
+use constant STATE_SWITCH_INHOT   => 2;
+use constant STATE_SWITCH_INCOLD  => 3;
 
 # Define an exception subclass
 @XML::Filter::Conditional::Exception::ISA = qw( XML::SAX::Exception );

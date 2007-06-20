@@ -7,7 +7,8 @@ WriteMakefile
           'PREREQ_PM' => {
                            'Test::Exception' => '0',
                            'Test::More' => '0',
-                           'XML::SAX::Base' => '0'
+                           'XML::SAX::Base' => '0',
+                           'XML::SAX::ParserFactory' => '1.00'
                          },
           'INSTALLDIRS' => 'site',
           'PL_FILES' => {}

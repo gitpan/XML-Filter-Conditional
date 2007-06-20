@@ -13,6 +13,7 @@ my $build = Module::Build->new
    build_requires => {
                         'Test::More' => 0,
                         'Test::Exception' => 0,
+                        'XML::SAX::ParserFactory' => '1.00',
                      },
    license => 'perl',
    create_makefile_pl => 'traditional',
