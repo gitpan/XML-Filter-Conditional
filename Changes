@@ -1,5 +1,10 @@
 Revision history for XML-Filter-Conditional
 
+0.03    BUGFIXES:
+         * Fixed test scripts that use Processing Instructions to skip them
+           if using the XML::SAX::PurePerl parser version 0.91 or before, as
+           it yields the wrong values.
+
 0.02    BUGFIXES:
          * Declare dependency on XML::SAX::ParserFactory because it doesn't
            automatically come with XML::SAX::Base
