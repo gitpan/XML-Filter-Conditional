@@ -1,16 +1,17 @@
 #  You may distribute under the terms of either the GNU General Public License
 #  or the Artistic License (the same terms as Perl itself)
 #
-#  (C) Paul Evans, 2007 -- leonerd@leonerd.org.uk
+#  (C) Paul Evans, 2007,2009 -- leonerd@leonerd.org.uk
 
 package XML::Filter::Conditional;
 
 use strict;
+use warnings;
 use base qw( XML::SAX::Base );
 
 use Carp;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 =head1 NAME
 
@@ -375,6 +376,6 @@ L<XML::SAX> - Simple API for XML
 
 =head1 AUTHOR
 
-Paul Evans E<lt>leonerd@leonerd.org.ukE<gt>
+Paul Evans <leonerd@leonerd.org.uk>
 
 =cut

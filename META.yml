@@ -1,12 +1,14 @@
 ---
 name: XML-Filter-Conditional
-version: 0.03
+version: 0.04
 author:
-  - 'Paul Evans E<lt>leonerd@leonerd.org.ukE<gt>'
+  - 'Paul Evans <leonerd@leonerd.org.uk>'
 abstract: |-
   an XML SAX filter for conditionally ignoring XML
   content
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
   XML::SAX::Base: 0
 build_requires:
@@ -16,5 +18,8 @@ build_requires:
 provides:
   XML::Filter::Conditional:
     file: lib/XML/Filter/Conditional.pm
-    version: 0.03
-generated_by: Module::Build version 0.26
+    version: 0.04
+generated_by: Module::Build version 0.33
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
