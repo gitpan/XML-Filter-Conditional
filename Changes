@@ -1,5 +1,8 @@
 Revision history for XML-Filter-Conditional
 
+0.05    BUGFIXES:
+         * Declare dependency on XML::SAX::Base 1.04
+
 0.04    CHANGES:
          * Various small updates to keep CPANTS happy
 
